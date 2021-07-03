@@ -202,3 +202,15 @@ button {
   color: white;
 }
 
+
+/* PRESS */
+
+.press {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+}
+
+.press figure {
+  margin:auto;
+}

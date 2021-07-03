@@ -72,4 +72,18 @@
     background-color: #9199bc;
     color: white;
   }
+
+  /* RESS */
+  .press {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .press figure {
+    text-align: center;
+  }
+  .press img {
+    position: relative;
+    margin: auto;
+  }
 }
