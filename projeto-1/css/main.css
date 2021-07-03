@@ -10,6 +10,10 @@
   padding: 0 8%;
 }
 
+h2 {
+  font-size: 24pt;
+}
+
 section {
   padding: 40px 0;
   width: 100%;
@@ -102,6 +106,46 @@ button {
 
 .design {
   background-color: #fff;
+  color: #6b6b92;
+  border-bottom: 1px solid #eee;
+}
+
+.design h2 {
+  color: #505061;
+  text-align: center;
+  margin: 10px auto;
+  font-size: 26pt;
+}
+
+.design h3 {
+  text-align: center;
+  color: #505061;
+  font-size: 18pt;
+  font-weight: 300;
+  margin: 10px 10%;
+}
+
+.get-account {
+  text-align: center;
+  background-color: #fff;
   color: #505061;
 }
 
+.get-account h2 {
+  font-size: 22pt;
+  font-weight: 500;
+  margin: 10px 0;
+}
+
+.get-account button {
+  position: relative;
+  color:white;
+  font-size: 14pt;
+  padding: 10px 16px;
+  background-color: #9199cb;
+  transition: ease-in-out 0.4s;
+}
+
+.get-account button:hover {
+  background-color: #747171;
+}
