@@ -185,7 +185,20 @@ button {
 }
 
 #box button {
-  position: relative;
-  width: auto;
+  text-align: left;
+  margin: 10px;
+  padding: 10px;
+  font-size: 14pt;
+  color: #fff;
+  background-color: transparent;
+  border: 2px solid #fff;
+  width: 80%;
+  transition: ease-in 0.3s;
+}
+
+#box button:hover {
+  cursor: pointer;
+  background-color: #9199bc;
+  color: white;
 }
 
