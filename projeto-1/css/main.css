@@ -1,0 +1,70 @@
+/* configs globais  */
+* {
+  margin: 0;
+  padding: 0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.container {
+  padding: 0 15px;
+}
+
+section {
+  padding: 40px 0;
+  width: 100%;
+  height: auto;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border-radius: 5px;
+  border: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+/*fim das configs globais */
+
+/* hero */
+.hero {
+  background-color: #263162;
+  color: #fff;
+}
+
+/* Links de apps */
+.app-links {
+  background-color: #fff;
+  color: #505061;
+}
+
+.app-links h2 {
+  font-weight: 500;
+  font-size: 20pt;
+  width: 70%;
+  margin: 10px 0;
+}
+
+.app-links h4 {
+  font-style: italic;
+  color: #adaeb3;
+  font-weight: 500;
+  font-size: 14pt;
+}
+
+.apps-button {
+  display: flex;
+  width: 100%;
+}
