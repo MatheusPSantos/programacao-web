@@ -3,6 +3,10 @@
     background: red;
   }
 
+  .container {
+    padding: 0 15px;
+  }
+
   .row {
     display: flex;
     flex-direction: column;
@@ -19,5 +23,17 @@
     border: 2px solid #9199bc;
     margin: 5px 0px;
     padding: 10px 0;
+  }
+
+
+  /* FEATURES */
+
+  .features {
+    width: 100%;
+  }
+
+  .features ul li {
+    width: 97%;
+    margin: 0 1.5%;
   }
 }

@@ -7,7 +7,7 @@
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0 8%;
 }
 
 section {
@@ -68,3 +68,40 @@ button {
   display: flex;
   width: 100%;
 }
+
+/*FEATURES */
+
+.features {
+  background-color: #fff;
+  color: #505061;
+  border-bottom: 1px solid #eee;
+}
+
+.features h3 {
+  font-weight: 700;
+  font-size: 18pt;
+  margin: 10px 0;
+}
+
+.features ul li {
+  text-align: left;
+  line-height: 1.7;
+  position: relative;
+  width: 30%;
+  margin: 10px 1.5%;
+}
+
+.features .lead {
+  font-size: 14pt;
+  font-weight: 500;
+  font-style: normal;
+  margin: 0 0 20px 0;
+}
+
+/* DESIGN */
+
+.design {
+  background-color: #fff;
+  color: #505061;
+}
+
