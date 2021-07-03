@@ -7,6 +7,7 @@
 }
 
 .container {
+  position: relative;
   padding: 0 8%;
 }
 
@@ -147,5 +148,44 @@ button {
 }
 
 .get-account button:hover {
+  cursor: pointer;
   background-color: #747171;
 }
+
+/*physical security */
+.physical-security {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 120px);
+  background-image: url("../assets/images/security-bg.jpg");
+  background-position: center;
+}
+
+#box {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 40%;
+  height: 230px;
+  margin: calc(30vh - 110px);
+  background-color: #505061;
+  color: #fff;
+  line-height: 1.7;
+  padding: 25px 40px;
+}
+
+#box h2 {
+  font-size: 20pt;
+  font-weight: normal;
+  margin: 10px;
+}
+
+#box p {
+  margin: 10px;
+}
+
+#box button {
+  position: relative;
+  width: auto;
+}
+

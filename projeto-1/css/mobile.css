@@ -36,4 +36,40 @@
     width: 97%;
     margin: 0 1.5%;
   }
+
+  /* PHYSICAL SECURITY */
+
+  .physical-security {
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    text-align: left;
+  }
+
+  #box {
+    position: relative;
+    width: calc(100% - 80px);
+    height: 250px;
+    text-align: left;
+    padding: 10px 40px;
+    margin: calc(35% - 110px) auto;
+  }
+
+  #box button {
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14pt;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: 65%;
+    transition: ease-in 0.3s;
+  }
+
+  #box button:hover {
+    cursor: pointer;
+    background-color: #9199bc;
+    color: white;
+  }
 }
