@@ -37,6 +37,11 @@ button {
   cursor: pointer;
 }
 
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
 .row {
   display: flex;
   flex-direction: row;
@@ -463,4 +468,29 @@ button {
 }
 
 /* CONTACT */
+.contacts {
+  position: relative;
+  width: 100%;
+  background-color: #fff;
+  color: #505061;
+  text-align: lef;
+  align-items: flex-start;
+  justify-content: start;
+}
 
+.contacts a {
+  color: #5b69a9;
+}
+
+.contacts h4 {
+  font-weight: normal;
+  color: #000;
+  margin: 10px;
+}
+
+.contacts .col {
+  position: relative;
+  width: 24%;
+  margin: 27px 0.5%;
+  line-height: 1.7;
+}
