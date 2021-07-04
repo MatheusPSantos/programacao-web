@@ -11,35 +11,35 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <img class="logotipo" src="" alt="Protonmail logo">
-    <ul class="menu">
-      <li>Abaout</li>
-      <li>Security</li>
-      <li>Blog</li>
-      <li>Carrers</li>
-      <li>Support</li>
-      <li>
-        <ul class="dropdown">
-          <li>Individual</li>
-          <li>Business</li>
-        </ul>
-      </li>
-      <li>VPN</li>
-      <li>
-        <button>LOG IN</button>
-      </li>
-      <li>
-        <button>SIGN UP</button>
-      </li>
-    </ul>
+  <header class="header" id="header">
+    <div class="container">
+      <div class="menu">
+
+        <img class="logotipo" src="assets/images/pm-logo-white.svg" alt="Protonmail logo">
+        <nav class="navlinks row">
+          <a>About</a>
+          <a>Security</a>
+          <a>Blog</a>
+          <a>Carrers</a>
+          <a>Support</a>
+          <a>Professional </a>
+          <a>VPN</a>
+          <a>
+            <button id="btnlogin">LOG IN</button>
+          </a>
+          <a>
+            <button id="btnsignup">SIGN UP</button>
+          </a>
+        </nav>
+      </div>
+    </div>
     <div class="burguer-menu">
       <span></span>
       <span></span>
       <span></span>
     </div>
-  </nav>
-  <header class="hero">
+  </header>
+  <section class="hero">
     <div class="container">
       <h1>Secure Email</h1>
       <h2>Based in Switzerland</h2>
@@ -48,7 +48,7 @@
 
       <button>Get encrypted email</button>
     </div>
-  </header>
+  </section>
 
   <section class="app-links">
     <div class="container">
@@ -78,7 +78,8 @@
           <h3>End-to-End Encryption</h3>
           <p class="lead">Automatic Email Security</p>
           <p>
-            We use end-to-end encryption and zero access encryption to secure emails. This means even we cannot decrypt
+            We use end-to-end encryption and zero access encryption to secure emails. This means even we cannot
+            decrypt
             and read your emails. As a result, your encrypted emails cannot be shared with third parties.
           </p>
         </li>
@@ -101,7 +102,8 @@
 
             </h4>
           <p>
-            We believe email privacy should be available to all. That's why our code is open source and basic ProtonMail
+            We believe email privacy should be available to all. That's why our code is open source and basic
+            ProtonMail
             accounts are always free. You can support the service by <a href="">upgrading</a> to a paid account.
           </p>
         </li>
@@ -145,7 +147,8 @@
     <div class="container">
       <div id="box">
         <h2>Physical Security</h2>
-        <p>Your data is stored on fully encrypted servers distributed across several biometric-secured data centers.</p>
+        <p>Your data is stored on fully encrypted servers distributed across several biometric-secured data centers.
+        </p>
         <button>Learn more about our security features</button>
       </div>
     </div>
@@ -317,7 +320,8 @@
             We’re offering extra resources in response to COVID-19
           </a>
           <div class="news-call">
-            We are living through a situation that is unprecedented in modern history. At a moment of great professional
+            We are living through a situation that is unprecedented in modern history. At a moment of great
+            professional
             uncertainty and personal stress, we are also being asked to be apart from each other physically. Over the
             last few weeks…
           </div>
@@ -590,6 +594,24 @@
       </div>
     </div>
   </footer>
+
 </body>
+
+<script>
+
+  var navbar = document.getElementById("header");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset >= 120) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  window.onscroll = function () { myFunction() };
+
+
+</script>
 
 </html>
