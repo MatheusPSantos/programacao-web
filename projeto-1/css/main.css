@@ -354,3 +354,61 @@ button {
   background-color: #747171;
   transition: ease 0.4s;
 }
+
+/* NEWS */
+
+.news {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: #fff;
+  color: #505061;
+}
+
+.news a {
+  text-decoration: none;
+  color: #505061;
+  font-size: 18pt;
+  margin: 5px
+}
+
+.news h3 {
+  position: relative;
+  text-align: center;
+  font-size: 28px;
+  font-weight: normal;
+  margin: 20px 0px 0px;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  margin: 20px 1%;
+  text-align: left;
+  width: 48%
+}
+
+.news-card img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 15px 0;
+}
+
+.news-card .news-call {
+  margin: 30px 0;
+  font-size: 14pt;
+  line-height: 1.7;
+}
+
+.news-card .post-date {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  color: #505061;
+  margin: 10px 0;
+}
