@@ -133,7 +133,7 @@ height: 120px;
   height: 50px;
   font-size: 10pt;
   background-color: #505061;
-  transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.3s;
 }
 
 .sticky .logotipo {
@@ -216,9 +216,21 @@ height: 120px;
   font-size: 14pt;
 }
 
-.apps-button {
+.app-button {
   display: flex;
-  width: 100%;
+  width: auto;
+  margin: 5px 4px;
+  font-size: 14pt;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: 2px solid #9199bc;
+  color: #9199cb;
+}
+
+.app-button:hover {
+ color: #fff;
+ background: #9199cb;
+ transition: all ease-in-out 0.3s;
 }
 
 /*FEATURES */
