@@ -34,6 +34,7 @@ ul {
 button {
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 .row {
@@ -317,4 +318,39 @@ button {
   width: 250px;
   margin: 1px;;
   text-align: center;
+}
+
+/* DONATE */
+.donate {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: #f6f6f6;
+}
+
+.donate .row {
+  justify-content: space-around;
+}
+
+.donate #texts {
+  font-size: 18pt;
+  color: #505061;
+  margin: 20px 0;
+}
+
+.donate #btns {
+  position: relative;
+  margin: auto 0;
+}
+
+.donate #btns button {
+  background-color: #9199bc;
+  color: #fff;
+  font-size: 14pt;
+  padding: 10px 20px;
+}
+
+.donate #btns button:hover {
+  background-color: #747171;
+  transition: ease 0.4s;
 }
