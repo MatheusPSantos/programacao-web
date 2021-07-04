@@ -412,3 +412,42 @@ button {
   color: #505061;
   margin: 10px 0;
 }
+/*  PARTNERS */
+
+.partners {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+#partners-header {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  font-size: 11pt;
+  font-weight: normal;
+  align-items: center;
+}
+
+#partners-header p {
+  width: 160px;
+}
+
+#partners-header span {
+  content: " ";
+  height: 0.5px;
+  background: #adaeb3;
+  width: calc(50% - 75px);
+}
+
+#partners-img {
+  position: relative;
+  height: auto;
+  width: 100%;
+  margin: 40px 0
+}
+
+#partners-img img {
+  position: relative;
+  width: 12%;
+}
