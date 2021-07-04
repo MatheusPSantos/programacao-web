@@ -451,3 +451,13 @@ button {
   position: relative;
   width: 12%;
 }
+
+.location-map {
+  background-image: url("../assets/images/map.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 440px;
+}
