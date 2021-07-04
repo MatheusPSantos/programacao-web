@@ -145,11 +145,55 @@ height: 120px;
 .hero {
   background-color: #263162;
   color: #fff;
-  height: 520px;
+  height: 420px;
   background-image: url("../assets/images/main-banner.png");
   background-repeat: no-repeat;
   background-position: center;
   padding: 140px 0 0 0;
+}
+
+.hero .hero-call {
+
+  position: relative;
+  width: 49%;
+  margin: auto 0.5%;
+}
+
+.hero .hero-call h1 {
+  font-size: 34pt;
+}
+
+.hero .hero-call h2 {
+  font-weight: normal;
+  font-size: 34pt;
+  margin-bottom: 20px;
+}
+
+.hero .hero-call h3 {
+  margin: 20px 0;
+  font-size: 18pt;
+  font-weight: normal;
+}
+
+.hero .hero-call h3 span {
+  font-weight: bold;
+}
+
+.hero-call button {
+  position: relative;
+  width: 60%;
+  margin: 10px 0;
+  padding: 15px 20px;
+  font-size: 20pt;
+  color: #5b69a9;
+  font-weight: bold;
+}
+
+.hero .hero-img {
+  position: relative;
+  width: 49%;
+  margin: auto 0.5%;
+
 }
 
 /* Links de apps */
