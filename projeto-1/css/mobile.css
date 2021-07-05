@@ -1,6 +1,6 @@
 @media only screen and (max-width: 760px) {
   body {
-    background: red;
+    background: #fff;
   }
 
   .container {
@@ -16,7 +16,12 @@
   .navlinks {
     display: none;
   }
-  
+
+  .sticky {
+    padding: 20px 0;
+    height: 40px !important;
+  }
+
   .navlinks-mb {
     flex-direction: column !important;
     position: fixed !important;
@@ -73,8 +78,32 @@
     background-color: #fff;
   }
 
-  /* app links  */
+  /* HERO */
 
+  .hero {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero button {
+    margin: auto auto;
+  }
+
+  .hero .col {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  /* app links  */
+  .app-links .row {
+    position: relative;
+    text-align: center;
+  }
   .app-button {
     width: 100%;
     height: auto;
@@ -146,5 +175,49 @@
   .press img {
     position: relative;
     margin: auto;
+  }
+
+  /* HISTORY */
+  .history {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .history p {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .history .map {
+    margin: 40px 0;
+  }
+
+  .donate {
+    position: relative;
+    text-align: center;
+  }
+
+
+  .news {
+    position: relative;
+    width: 100%;
+  }
+
+  .news-card {
+    position: relative;
+    width: 100%;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .footer .menu {
+    flex-direction: column;
   }
 }
