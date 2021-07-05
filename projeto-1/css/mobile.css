@@ -1,0 +1,223 @@
+@media only screen and (max-width: 760px) {
+  body {
+    background: #fff;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  .navlinks {
+    display: none;
+  }
+
+  .sticky {
+    padding: 20px 0;
+    height: 40px !important;
+  }
+
+  .navlinks-mb {
+    flex-direction: column !important;
+    position: fixed !important;
+    width: 100% !important;
+    margin: 80px -15px !important;
+    background-color: #505061;
+    height: auto;
+  }
+
+  .navlinks a {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .navlinks #btngroup {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    margin: 20px  !important;
+  }
+
+  .navlinks #btngroup button {
+    padding: 5px;
+  }
+
+  .header .container {
+    flex-direction: row;
+  }
+
+  .header .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .burguer-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: auto;
+  }
+
+  .burguer-menu span {
+    content: "";
+    position: relative;
+    width: 60%;
+    margin: 2px 20%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    height: 1px;
+    background-color: #fff;
+  }
+
+  /* HERO */
+
+  .hero {
+    position: relative;
+    width: 100%;
+  }
+
+  .hero button {
+    margin: auto auto;
+  }
+
+  .hero .col {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-img {
+    display: none;
+  }
+
+  /* app links  */
+  .app-links .row {
+    position: relative;
+    text-align: center;
+  }
+  .app-button {
+    width: 100%;
+    height: auto;
+    font-size: 14pt;
+    color: #9199bc;
+    background-color: transparent;
+    border: 2px solid #9199bc;
+    margin: 5px 0px;
+    padding: 10px 0;
+  }
+
+
+  /* FEATURES */
+
+  .features {
+    width: 100%;
+  }
+
+  .features ul li {
+    width: 97%;
+    margin: 0 1.5%;
+  }
+
+  /* PHYSICAL SECURITY */
+
+  .physical-security {
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    text-align: left;
+  }
+
+  #box {
+    position: relative;
+    width: calc(100% - 80px);
+    height: 250px;
+    text-align: left;
+    padding: 10px 40px;
+    margin: calc(35% - 110px) auto;
+  }
+
+  #box button {
+    text-align: left;
+    margin: 10px;
+    padding: 10px;
+    font-size: 14pt;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    width: 65%;
+    transition: ease-in 0.3s;
+  }
+
+  #box button:hover {
+    cursor: pointer;
+    background-color: #9199bc;
+    color: white;
+  }
+
+  /* RESS */
+  .press {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .press figure {
+    text-align: center;
+  }
+  .press img {
+    position: relative;
+    margin: auto;
+  }
+
+  /* HISTORY */
+  .history {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .history p {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .history .map {
+    margin: 40px 0;
+  }
+
+  .donate {
+    position: relative;
+    text-align: center;
+  }
+
+
+  .news {
+    position: relative;
+    width: 100%;
+  }
+
+  .news-card {
+    position: relative;
+    width: 100%;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .footer .menu {
+    flex-direction: column;
+  }
+}
