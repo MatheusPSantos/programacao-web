@@ -16,7 +16,12 @@
       <div class="menu">
 
         <img class="logotipo" src="assets/images/pm-logo-white.svg" alt="Protonmail logo">
-        <nav class="navlinks row">
+        <div class="burguer-menu" id="burguer-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <nav class="navlinks row" id="navlinks">
           <a>About</a>
           <a>Security</a>
           <a>Blog</a>
@@ -24,20 +29,19 @@
           <a>Support</a>
           <a>Professional </a>
           <a>VPN</a>
-          <a>
-            <button id="btnlogin">LOG IN</button>
-          </a>
-          <a>
-            <button id="btnsignup">SIGN UP</button>
-          </a>
+          <div class="btngroup">
+
+            <a>
+              <button id="btnlogin">LOG IN</button>
+            </a>
+            <a>
+              <button id="btnsignup">SIGN UP</button>
+            </a>
+          </div>
         </nav>
       </div>
     </div>
-    <div class="burguer-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+
   </header>
   <section class="hero">
     <div class="container">
@@ -619,6 +623,22 @@
     }
   }
   window.onscroll = function () { myFunction() };
+
+
+  var burguerMenu = document.getElementById("burguer-menu");
+  var navlinks = document.getElementById("navlinks");
+  var classNav = navlinks.classList;
+  burguerMenu.addEventListener('click', (event) => {
+    if (classNav.contains('navlinks')) {
+      navlinks.classList.remove('navlinks');
+      navlinks.classList.remove('row');
+      navlinks.classList.add('navlinks-mb');
+      navlinks.classList.add('row');
+    } else {
+      navlinks.classList.add('navlinks');
+      navlinks.classList.remove('navlinks-mb');
+    }
+  });
 
 
 </script>

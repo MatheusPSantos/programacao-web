@@ -13,7 +13,65 @@
   }
 
   /* HEADER */
+  .navlinks {
+    display: none;
+  }
+  
+  .navlinks-mb {
+    flex-direction: column !important;
+    position: fixed !important;
+    width: 100% !important;
+    margin: 80px -15px !important;
+    background-color: #505061;
+    height: auto;
+  }
 
+  .navlinks a {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+  }
+
+  .navlinks #btngroup {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    margin: 20px  !important;
+  }
+
+  .navlinks #btngroup button {
+    padding: 5px;
+  }
+
+  .header .container {
+    flex-direction: row;
+  }
+
+  .header .menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .burguer-menu {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 50px;
+    height: auto;
+  }
+
+  .burguer-menu span {
+    content: "";
+    position: relative;
+    width: 60%;
+    margin: 2px 20%;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    height: 1px;
+    background-color: #fff;
+  }
 
   /* app links  */
 
