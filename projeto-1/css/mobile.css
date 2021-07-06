@@ -49,6 +49,10 @@
     padding: 5px;
   }
 
+  .social-links {
+    display: none;
+  }
+
   .header .container {
     flex-direction: row;
   }
