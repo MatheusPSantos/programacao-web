@@ -49,6 +49,10 @@
     padding: 5px;
   }
 
+  .social-links {
+    display: none;
+  }
+
   .header .container {
     flex-direction: row;
   }
@@ -218,6 +222,37 @@
   }
 
   .footer .menu {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 759px ) and (min-width: 530px) {
+
+  /* hero */
+  .hero-call button {
+    font-size: 14pt;
+  }
+}
+
+@media only screen and (max-width: 529px) and (min-width:  321px) {
+  
+  /* hero */
+  .hero-call button {
+    font-size: 12pt;
+    padding: 10px 2px;
+  }
+
+  .physical-security #box {
+    position: relative;
+    height: auto;
+  }
+
+  .physical-security #box button {
+    width: 100%;
+    font-size: 12pt;
+  }
+
+  .footer .flags {
     flex-direction: column;
   }
 }

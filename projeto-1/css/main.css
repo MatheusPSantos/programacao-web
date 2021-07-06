@@ -75,6 +75,8 @@ height: 120px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
+  margin-top: 30px;
 }
 
 .header .menu .logotipo {
@@ -90,6 +92,7 @@ height: 120px;
 }
 
 .header .navlinks a {
+  cursor: pointer;
   position: relative;
   margin: 10px;
 }
@@ -99,10 +102,12 @@ height: 120px;
 }
 
 .header .menu button {
+  position: relative;
   font-weight: bold;
-  margin-top: -15px;
+  margin-top: -6px;
   padding: 15px 25px;
 }
+
 
 .header #btnlogin {
   background-color: transparent;
@@ -139,6 +144,12 @@ height: 120px;
 .sticky .logotipo {
   position: relative;
   width: 120px
+}
+
+.sticky .social-links {
+  font-size: 12pt;
+  transform: none;
+  transition: none;
 }
 
 /* hero */
@@ -196,6 +207,39 @@ height: 120px;
 
 }
 
+.social-links {
+  position: fixed;
+  background: transparent;
+  width: 100%;
+  height: 35px;
+  top: 0;
+  margin-bottom: 20px;
+  box-shadow: 1px 0px 1px #fff;
+}
+
+.social-links ul {
+  display: flex;
+  position: relative ;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 4px 0;
+}
+
+.social-links ul li{
+  margin: 4px;
+}
+.social-links ul li i {
+  color: rgba(255,255,255,0.5);
+}
+.social-links #lang {
+  margin: 4px 40px;
+  color: #fff;
+
+}
+.social-links #lang i {
+  margin: 0 10px;
+  color: #fff;
+}
 /* Links de apps */
 .app-links {
   background-color: #fff;
