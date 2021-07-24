@@ -27,6 +27,70 @@ footer {
   height: auto;
 }
 
+/* Caixa de login */
+#login-box {
+  position: fixed;
+  z-index: 10001;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#login-box-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-box-header h2 {
+  margin: auto;
+  left: 5px;
+}
+
+#login-box-header i {
+  margin: 20px 5px;
+  cursor:pointer;
+  font-size: 30px;
+  font-weight: 100;
+}
+#login-box-header i:hover {
+  color: #5b69a9;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  margin: auto;
+  top: 50px;
+}
+
+#login-form input {
+  margin: 10px 0 0 0;
+  padding: 10px 2px;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#login-form input:focus {
+  border-bottom: 1px solid #263162;
+}
+
+#login-form button {
+  margin: 10px 0 0 0;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+#login-form button:hover {
+  background: #263162;
+  color: white;
+}
+
 header {
   width: 100%;
   height: auto;
