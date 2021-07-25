@@ -136,7 +136,7 @@ function calculateRangeValues(listCodes) {
 
 function separeteList(listCodes) {
     listCodes = listCodes.sort((a, b) => a - b);
-    let middle = Math.ceil(listCodes.length / 2);
+    let middle = Math.floor(listCodes.length / 2);
     let firstSubList = listCodes.slice(0, middle);
     let secondSubList = listCodes.slice(middle, listCodes.length);
 
@@ -147,7 +147,8 @@ submitButtonColor.addEventListener('click', (event) => {
     event.preventDefault();
     if (inputNameColor.value.length > 3) {
         let rangeValues = calculateRangeValues(transformNameInAsciiCode(inputNameColor.value));
-        console.log(rangeValues)
+
+        requestColorPalette(rangeValues);
     } else {
         inputNameError.innerText = "Inforrme mais de três caracteres"
     }
@@ -163,17 +164,19 @@ inputNameColor.addEventListener('change', (event) => {
 function requestColorPalette(values) {
     let { min, max } = values;
 
-    fetch("&hueRange=112%2C267", {
-        "method": "GET",
-        "headers": {
+    fetch(`${colourAPI}&hueRange=${min},${max}`, {
+        method: "GET",
+        referrerPolicy: "origin",        
+        headers: {
+
             "Content-Type": "application/json",
-            "Authorization": "Basic Og=="
+            "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
+            "Referrer-Policy": "origin"
         }
-    })
-        .then(response => {
-            console.log(response);
-        })
-        .catch(err => {
-            console.error(err);
-        });
+    }).then(response => {
+        console.log(response);
+    }).catch(err => {
+        console.error(err);
+    });
+
 }
