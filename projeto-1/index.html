@@ -12,6 +12,20 @@
 </head>
 
 <body>
+  <aside id="login-box" style="display:none">
+    <div id="login-box-header">
+      <h2 style="color: #5a5a5a;margin-top: 20px;">Login</h2>
+      <i id="close-login-box" class="fa fa-times-circle-o" aria-hidden="true"></i>
+    </div>
+    <form id="login-form">
+      <label for="email">Email:</label>
+      <input id="email" name="email" type="email" placeholder="user@email.com"/>
+      <label for="pass">Password:</label>
+      <input id="pass" name="pass" type="password" placeholder="valid password"/>
+      <span id="display-alert"></span>
+      <button type="submit">Login</button>
+    </form>
+  </aside>
   <header class="header" id="header">
     <div class="social-links" id="social-links">
       <div class="container">
@@ -123,7 +137,8 @@
           <h3>Anonymous Email</h3>
           <p class="lead">Protect Your Privacy</p>
           <p>
-            No personal information is required to create your secure email account. By default, we do not keep any IP
+            No personal information is required to create your secure email account. By default, we do not keep any
+            IP
             logs which can be linked to your anonymous email account. Your privacy comes first.
           </p>
         </li>
@@ -147,7 +162,8 @@
           <h3>Easy to Use</h3>
           <p class="lead">Security without the hassle</p>
           <p>
-            ProtonMail can be used on any device without software install. ProtonMail secure email accounts are fully
+            ProtonMail can be used on any device without software install. ProtonMail secure email accounts are
+            fully
             compatible with other email providers. You can send and receive emails normally.
           </p>
         </li>
@@ -156,7 +172,8 @@
           <h3>Calendar & Drive</h3>
           <p class="lead">Security with Productivity</p>
           <p>
-            Proton Calendar and Proton Drive extend privacy to your events and documents. Our secure email service is
+            Proton Calendar and Proton Drive extend privacy to your events and documents. Our secure email service
+            is
             fully integrated with an encrypted calendar, enabling you to keep your events private as well.
           </p>
         </li>
@@ -234,11 +251,13 @@
       <div class="row">
 
         <p>
-          ProtonMail was founded in 2013 by scientists who met at CERN and were drawn together by a shared vision of a
+          ProtonMail was founded in 2013 by scientists who met at CERN and were drawn together by a shared vision of
+          a
           more
           secure and private Internet. Since then, ProtonMail has evolved into a global effort to protect civil
           liberties
-          and build a more secure Internet, with team members also hailing from Caltech, Harvard, ETH Zurich and many
+          and build a more secure Internet, with team members also hailing from Caltech, Harvard, ETH Zurich and
+          many
           other
           research institutions.
         </p>
@@ -357,7 +376,8 @@
           <div class="news-call">
             We are living through a situation that is unprecedented in modern history. At a moment of great
             professional
-            uncertainty and personal stress, we are also being asked to be apart from each other physically. Over the
+            uncertainty and personal stress, we are also being asked to be apart from each other physically. Over
+            the
             last few weeks…
           </div>
           <div class="post-date">
@@ -448,6 +468,19 @@
           </p>
 
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="color-section" style="display: inherit;">
+    <h2>Colour lover - api</h2>
+    <div class="color-actions">
+      <label for="input-name-color">Insira seu nome e será gerado uma paleta de cores aleatória que combina com ele:</label>
+      <label style="color: red;" id="input-name-error"></label>
+      <div style="display: flex;">
+        <input type="text" id="input-name-color" name="input-name-color" />
+        <button id="submit-name-color">Enviar <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -664,5 +697,6 @@
 
 
 </script>
+<script src="js/index.js"></script>
 
 </html>

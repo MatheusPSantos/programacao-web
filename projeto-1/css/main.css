@@ -27,6 +27,83 @@ footer {
   height: auto;
 }
 
+/* Caixa de login */
+#login-box {
+  position: fixed;
+  z-index: 10001;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+#login-box-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-box-header h2 {
+  margin: auto;
+  left: 5px;
+}
+
+#login-box-header i {
+  margin: 20px 5px;
+  cursor:pointer;
+  font-size: 30px;
+  font-weight: 100;
+}
+#login-box-header i:hover {
+  color: #5b69a9;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  position: relative;
+  margin: auto;
+  top: 50px;
+}
+
+#login-form input {
+  margin: 10px 0 0 0;
+  padding: 10px 2px;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+#login-form label {
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+
+#display-alert {
+  color: red;
+}
+
+#login-form input:focus {
+  border-bottom: 1px solid #263162 !important;
+}
+
+#login-form button {
+  margin: 10px 0 0 0;
+  padding: 10px 0;
+  font-weight: bold;
+}
+
+.invalid-input {
+  border-bottom: 2px solid rgb(242, 10, 10) !important;
+}
+
+#login-form button:hover {
+  background: #263162;
+  color: white;
+}
+
 header {
   width: 100%;
   height: auto;
@@ -690,6 +767,58 @@ height: 120px;
   width: 24%;
   margin: 27px 0.5%;
   line-height: 1.7;
+}
+
+/* COLOR SECTION */
+#color-section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(252, 240, 234);
+}
+
+#color-section h2 {
+  text-align: center;
+  margin: auto;
+}
+
+.color-actions {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 20%;
+}
+
+.color-actions label {
+  margin: 10px 0;
+  font-size: 14pt;
+  text-align: center;
+}
+
+.red {
+  color: red;
+}
+
+#input-name-color {
+  height: 60px;
+  border: none;
+  margin: 10px 0;
+  padding: 0px 10px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, .5);
+  position: relative;
+  width: 90%;
+  font-size: 14pt;
+}
+
+#submit-name-color {
+  position: relative;
+  width: 10%;
+  margin: 10px 0 0 0;
+  height: 62px;
+  background-color: seagreen;
+  border-radius: 0;
+  border: none;
+  color: #fff;
 }
 
 /* FOOTER */
