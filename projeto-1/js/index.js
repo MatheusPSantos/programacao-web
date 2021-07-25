@@ -8,6 +8,8 @@ const spanAlert = document.getElementById("display-alert");
 const alertMessage = "Usuário ou senha inválidos";
 const colorSection = document.getElementById("color-section");
 const submitButtonColor = document.querySelector("#submit-name-color");
+const inputNameColor = document.querySelector("#input-name-color");
+const inputNameError = document.querySelector("#input-name-error");
 
 document.cookie = "access_token="
 
@@ -119,3 +121,37 @@ function transformNameInAsciiCode(nameArray) {
         return ch.charCodeAt();
     });
 }
+
+function calculateRangeValues(listCodes) {
+    let { first, second } = separeteList(listCodes);
+    let minVal = first.reduce((accumulator, current) => accumulator + current);
+    let maxVal = first.reduce((accumulator, current) => accumulator + current);
+    
+    return { min: minVal, max: maxVal };
+}
+
+function separeteList(listCodes) {
+    listCodes = listCodes.sort((a, b) => a - b);
+    let middle = Math.ceil(listCodes.length / 2);
+    let firstSubList = listCodes.slice(0, middle);
+    let secondSubList = listCodes.slice(middle, listCodes.length);
+
+    return { first: firstSubList, second: secondSubList };
+}
+
+submitButtonColor.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (inputNameColor.value.length > 3) {
+        let rangeValues = calculateRangeValues(transformNameInAsciiCode(inputNameColor.value));
+        
+    } else {
+        inputNameError.innerText = "Inforrme mais de três caracteres"
+    }
+});
+
+inputNameColor.addEventListener('change', (event) => {
+    event.preventDefault();
+    if (inputNameColor.value.length > 3) {
+        inputNameError.innerText = "";
+    }
+});
