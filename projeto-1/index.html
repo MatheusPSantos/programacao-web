@@ -472,16 +472,19 @@
     </div>
   </section>
 
-  <section id="color-section" style="display: inherit;">
+  <section id="color-section" style="display: none;">
     <h2>Colour lover - api</h2>
     <div class="color-actions">
-      <label for="input-name-color">Insira seu nome e será gerado uma paleta de cores aleatória que combina com ele:</label>
+      <label for="input-name-color">Insira seu nome e serão exibidas paletas de cores aleatórias que combina com ele:</label>
       <label style="color: red;" id="input-name-error"></label>
       <div style="display: flex;">
         <input type="text" id="input-name-color" name="input-name-color" />
         <button id="submit-name-color">Enviar <i class="fa fa-search" aria-hidden="true"></i>
         </button>
       </div>
+    </div>
+    <div id="results">
+    
     </div>
   </section>
 
@@ -697,6 +700,7 @@
 
 
 </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="js/index.js"></script>
-
 </html>
+

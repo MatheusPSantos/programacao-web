@@ -10,11 +10,15 @@ const colorSection = document.getElementById("color-section");
 const submitButtonColor = document.querySelector("#submit-name-color");
 const inputNameColor = document.querySelector("#input-name-color");
 const inputNameError = document.querySelector("#input-name-error");
+const resultsPallete = document.querySelector("#results");
+let resPallete = [];
 
-document.cookie = "access_token="
 
-const colourAPI = "http://www.colourlovers.com/api/palettes/new?format=json";
+const colourAPI = "http://colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
+const qrCodeAPI = "http://api.qrserver.com/v1/create-qr-code";
+
+window.onload = displayColorDisplay();
 
 buttonCloseLogin.addEventListener('click', () => {
     loginBox.setAttribute("style", "display:none");
@@ -111,6 +115,8 @@ function displayColorDisplay() {
     let acces_token = recoverToken()
     if (acces_token !== "") {
         colorSection.setAttribute("style", "display:inherit");
+        window.scrollTo(0,6700)
+
     } else {
         colorSection.setAttribute("style", "display:none");
     }
@@ -148,9 +154,11 @@ submitButtonColor.addEventListener('click', (event) => {
     if (inputNameColor.value.length > 3) {
         let rangeValues = calculateRangeValues(transformNameInAsciiCode(inputNameColor.value));
 
-        requestColorPalette(rangeValues);
+        requestColoursPallete(rangeValues).then(pallete => {
+            template(pallete);
+        });
     } else {
-        inputNameError.innerText = "Inforrme mais de três caracteres"
+        inputNameError.innerText = "Informe mais de três caracteres"
     }
 });
 
@@ -161,22 +169,43 @@ inputNameColor.addEventListener('change', (event) => {
     }
 });
 
-function requestColorPalette(values) {
+function requestColoursPallete(values) {
     let { min, max } = values;
-
-    fetch(`${colourAPI}&hueRange=${min},${max}`, {
-        method: "GET",
-        referrerPolicy: "origin",        
-        headers: {
-
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "http://127.0.0.1:5500",
-            "Referrer-Policy": "origin"
+    let url = `${colourAPI}&hueRange=${min},${max}&jsonCallback=_callback`;
+    return $.ajax({
+        url: url,
+        crossDomain: true,
+        dataType: "jsonp",
+        jsonpCallback: '_callback',
+        complete: function (xhr, status) {
+            console.log('complete')
+        },
+        success: function (data, status, xhr) {
+            if (data.length != undefined && data.length > 0) {
+                if (data[0].colors != undefined) {
+                    resPallete = data;
+                }
+            }
+        },
+        error: function (xhr, status, error) {
+            alert('There was a problem getting a color palette.');
         }
-    }).then(response => {
-        console.log(response);
-    }).catch(err => {
-        console.error(err);
+    });
+}
+
+function template(values) {
+    let tem = values.map((val) => {
+        return `
+            <span class="pallete-title">${val.title}</span>     
+            <div class="pallete-result">
+                ${val.colors.map(v => {
+                    return `<div class="pallete-square" style="background:#${v};">
+                    </div>`
+                }).join("")}
+            </div>
+        `;
     });
 
+    resultsPallete.innerHTML = tem.join("");
 }
+
