@@ -13,6 +13,7 @@ const inputNameError = document.querySelector("#input-name-error");
 
 document.cookie = "access_token="
 
+const colourAPI = "http://www.colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
 
 buttonCloseLogin.addEventListener('click', () => {
@@ -125,9 +126,12 @@ function transformNameInAsciiCode(nameArray) {
 function calculateRangeValues(listCodes) {
     let { first, second } = separeteList(listCodes);
     let minVal = first.reduce((accumulator, current) => accumulator + current);
-    let maxVal = first.reduce((accumulator, current) => accumulator + current);
-    
-    return { min: minVal, max: maxVal };
+    let maxVal = second.reduce((accumulator, current) => accumulator + current);
+
+    minVal = ((359 * (maxVal - minVal) / (359 + minVal)));
+    maxVal = ((359 * (maxVal - minVal) / (359 + maxVal)));
+
+    return { min: Math.ceil(minVal), max: Math.ceil(maxVal) };
 }
 
 function separeteList(listCodes) {
@@ -143,7 +147,7 @@ submitButtonColor.addEventListener('click', (event) => {
     event.preventDefault();
     if (inputNameColor.value.length > 3) {
         let rangeValues = calculateRangeValues(transformNameInAsciiCode(inputNameColor.value));
-        
+        console.log(rangeValues)
     } else {
         inputNameError.innerText = "Inforrme mais de três caracteres"
     }
@@ -155,3 +159,21 @@ inputNameColor.addEventListener('change', (event) => {
         inputNameError.innerText = "";
     }
 });
+
+function requestColorPalette(values) {
+    let { min, max } = values;
+
+    fetch("&hueRange=112%2C267", {
+        "method": "GET",
+        "headers": {
+            "Content-Type": "application/json",
+            "Authorization": "Basic Og=="
+        }
+    })
+        .then(response => {
+            console.log(response);
+        })
+        .catch(err => {
+            console.error(err);
+        });
+}
