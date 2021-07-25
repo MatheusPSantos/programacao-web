@@ -7,10 +7,7 @@ const loginPass = document.getElementById("pass");
 const spanAlert = document.getElementById("display-alert");
 const alertMessage = "Usuário ou senha inválidos";
 
-const requestConfig = {
-
-    mode: "no-cors"
-};
+document.cookie="access_token="
 
 const loginAPI = "https://reqres.in/api/login";
 
@@ -59,7 +56,6 @@ loginForm.addEventListener('submit', (event) => {
 
 function requestLogin(user, pass) {
     try {
-        console.log(user, pass)
         let token = "";
         let requestBody = {
             email: user.trim(),
@@ -80,6 +76,7 @@ function requestLogin(user, pass) {
             }
         }).then(data => {
             document.cookie = `access_token=${data.token}`;
+            displayColorDisplay();
             closeLoginBox();
         }).catch(err => {
             console.error(err);
@@ -97,4 +94,19 @@ function closeLoginBox() {
     loginPass.value = "";
     loginEmail.value = "";
     loginBox.setAttribute("style", "display:none");
+}
+
+function displayColorDisplay() {
+    let acces_token  = recoverToken()
+    if(acces_token !== "") {
+        console.log('mostrar')
+    } else {
+        console.log('não mostra')
+    }
+}
+
+function recoverToken() {
+    let cookies = document.cookie.split(';');
+    let token = cookies.filter((t)=>t.includes("access_token"));
+    return token[0].split("=")[1];
 }
