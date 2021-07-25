@@ -13,11 +13,12 @@ const inputNameError = document.querySelector("#input-name-error");
 const resultsPallete = document.querySelector("#results");
 let resPallete = [];
 
-document.cookie = "access_token=";
 
 const colourAPI = "http://colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
 const qrCodeAPI = "http://api.qrserver.com/v1/create-qr-code";
+
+window.onload = displayColorDisplay();
 
 buttonCloseLogin.addEventListener('click', () => {
     loginBox.setAttribute("style", "display:none");
@@ -114,6 +115,8 @@ function displayColorDisplay() {
     let acces_token = recoverToken()
     if (acces_token !== "") {
         colorSection.setAttribute("style", "display:inherit");
+        window.scrollTo(0,6700)
+
     } else {
         colorSection.setAttribute("style", "display:none");
     }
@@ -205,3 +208,4 @@ function template(values) {
 
     resultsPallete.innerHTML = tem.join("");
 }
+
