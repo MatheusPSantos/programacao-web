@@ -7,6 +7,7 @@ const loginPass = document.getElementById("pass");
 const spanAlert = document.getElementById("display-alert");
 const alertMessage = "Usuário ou senha inválidos";
 const colorSection = document.getElementById("color-section");
+const submitButtonColor = document.querySelector("#submit-name-color");
 
 document.cookie = "access_token="
 
@@ -110,4 +111,11 @@ function displayColorDisplay() {
     } else {
         colorSection.setAttribute("style", "display:none");
     }
+}
+
+function transformNameInAsciiCode(nameArray) {
+    let nameSplited = nameArray.split("");
+    return nameSplited.map(ch => {
+        return ch.charCodeAt();
+    });
 }
