@@ -76,14 +76,27 @@ footer {
   border-bottom: 2px solid rgba(0, 0, 0, 0.5);
 }
 
+#login-form label {
+  margin: 10px 0 0 0;
+  text-align: left;
+}
+
+#display-alert {
+  color: red;
+}
+
 #login-form input:focus {
-  border-bottom: 1px solid #263162;
+  border-bottom: 1px solid #263162 !important;
 }
 
 #login-form button {
   margin: 10px 0 0 0;
   padding: 10px 0;
   font-weight: bold;
+}
+
+.invalid-input {
+  border-bottom: 2px solid rgb(242, 10, 10) !important;
 }
 
 #login-form button:hover {
