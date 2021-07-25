@@ -795,6 +795,10 @@ height: 120px;
   text-align: center;
 }
 
+.red {
+  color: red;
+}
+
 #input-name-color {
   height: 60px;
   border: none;
