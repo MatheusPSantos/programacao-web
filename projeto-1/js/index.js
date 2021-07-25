@@ -6,8 +6,9 @@ const loginEmail = document.getElementById("email");
 const loginPass = document.getElementById("pass");
 const spanAlert = document.getElementById("display-alert");
 const alertMessage = "Usuário ou senha inválidos";
+const colorSection = document.getElementById("color-section");
 
-document.cookie="access_token="
+document.cookie = "access_token="
 
 const loginAPI = "https://reqres.in/api/login";
 
@@ -96,17 +97,17 @@ function closeLoginBox() {
     loginBox.setAttribute("style", "display:none");
 }
 
-function displayColorDisplay() {
-    let acces_token  = recoverToken()
-    if(acces_token !== "") {
-        console.log('mostrar')
-    } else {
-        console.log('não mostra')
-    }
-}
-
 function recoverToken() {
     let cookies = document.cookie.split(';');
-    let token = cookies.filter((t)=>t.includes("access_token"));
+    let token = cookies.filter((t) => t.includes("access_token"));
     return token[0].split("=")[1];
+}
+
+function displayColorDisplay() {
+    let acces_token = recoverToken()
+    if (acces_token !== "") {
+        colorSection.setAttribute("style", "display:inherit");
+    } else {
+        colorSection.setAttribute("style", "display:none");
+    }
 }
