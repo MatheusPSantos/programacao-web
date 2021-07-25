@@ -5,12 +5,10 @@ const loginForm = document.getElementById("login-form");
 const loginEmail = document.getElementById("email");
 const loginPass = document.getElementById("pass");
 const spanAlert = document.getElementById("display-alert");
-const alertMessage = "";
+const alertMessage = "Usuário ou senha inválidos";
 
 const requestConfig = {
-    headers: {
-        "Content-Type": "application/json",
-    },
+
     mode: "no-cors"
 };
 
@@ -70,14 +68,33 @@ function requestLogin(user, pass) {
 
         fetch(loginAPI, {
             method: "POST",
-            ...requestConfig,
+            headers: {
+                "Content-Type": "application/json",
+            },
             body: JSON.stringify(requestBody)
         }).then(response => {
-            console.log(response);
+            if (response.status === 200) {
+                return response.json();
+            } else {
+                displayRequestError(response.statusText);
+            }
+        }).then(data => {
+            document.cookie = `access_token=${data.token}`;
+            closeLoginBox();
         }).catch(err => {
             console.error(err);
         });
     } catch (error) {
         console.error('erro', error);
     }
+}
+
+function displayRequestError(errormsg) {
+    window.alert(errormsg);
+}
+
+function closeLoginBox() {
+    loginPass.value = "";
+    loginEmail.value = "";
+    loginBox.setAttribute("style", "display:none");
 }
