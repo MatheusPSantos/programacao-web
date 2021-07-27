@@ -18,6 +18,7 @@ const colourAPI = "http://colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
 const qrCodeAPI = "http://api.qrserver.com/v1/create-qr-code";
 
+document.cookie = 'access_token=';
 window.onload = displayColorDisplay();
 
 buttonCloseLogin.addEventListener('click', () => {
@@ -115,7 +116,7 @@ function displayColorDisplay() {
     let acces_token = recoverToken()
     if (acces_token !== "") {
         colorSection.setAttribute("style", "display:inherit");
-        window.scrollTo(0,6700)
+        window.scrollTo(0, 6700)
 
     } else {
         colorSection.setAttribute("style", "display:none");
@@ -199,9 +200,9 @@ function template(values) {
             <span class="pallete-title">${val.title}</span>     
             <div class="pallete-result">
                 ${val.colors.map(v => {
-                    return `<div class="pallete-square" style="background:#${v};">
+            return `<div class="pallete-square" style="background:#${v};">
                     </div>`
-                }).join("")}
+        }).join("")}
             </div>
         `;
     });
