@@ -14,9 +14,8 @@ const resultsPallete = document.querySelector("#results");
 let resPallete = [];
 
 
-const colourAPI = "http://colourlovers.com/api/palettes/new?format=json";
+const colourAPI = "https://colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
-const qrCodeAPI = "http://api.qrserver.com/v1/create-qr-code";
 
 document.cookie = 'access_token=';
 window.onload = displayColorDisplay();
