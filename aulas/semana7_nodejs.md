@@ -16,3 +16,20 @@ A arquitetura do Nodejs inclui uma implementação do motor V8. A libuv de fato 
 Dentro do nodejs é possível fazer uso dos recursos de módulos, que permite a implementação de módulos que poderão ser utilizados em diferentes arquivos através da palavra chave `require`.
 
 Dentro do ambiente também possível fazer uso de módulos padrão que já vem com o próprio NODE, por exemplo o módulo de file system, ou `fs`.
+
+## módulo http
+
+É um módulo disponível por padrão no nodejs.
+```
+const http = require('http');
+
+const server = http.createServer(function (req, res) {
+    console.log('Chegou uma requisição');
+    res.write('Hello world no server');
+    res.end();
+});
+
+server.listen(8000);
+```
+
+Dentro desse código podemos entender algumas analogias, o primeiro parâmetro `req` é uma analogia direta a requisição do protocolo HTTP. Analogamente o segundo parâmetro `res` é uma representação da resposta HTTP.
