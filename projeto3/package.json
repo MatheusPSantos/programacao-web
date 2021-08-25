@@ -1,0 +1,19 @@
+{
+    "name": "projeto3",
+    "description": "api do projeto 3 de programação web",
+    "version": "1.0.0",
+    "author": "matheuspsantos",
+    "license": "MIT",
+    "main": "index.js",
+    "scripts": {
+        "dev": "node node_modules/nodemon/bin/index.js index.js",
+        "start": "node index.js"
+    },
+    "devDependencies": {
+        "nodemon":""
+    },
+    "dependencies": {
+        "express": "",
+        "mongodb":""
+    }
+}
