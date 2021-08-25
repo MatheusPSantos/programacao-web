@@ -6,14 +6,14 @@
     "license": "MIT",
     "main": "index.js",
     "scripts": {
-        "dev": "node node_modules/nodemon/bin/index.js index.js",
+        "dev": "node node_modules/nodemon/bin/nodemon.js index.js",
         "start": "node index.js"
     },
     "devDependencies": {
-        "nodemon":""
+        "nodemon": "^2.0.12"
     },
     "dependencies": {
-        "express": "",
-        "mongodb":""
+        "express": "^4.17.1",
+        "mongodb": "^4.1.1"
     }
 }
