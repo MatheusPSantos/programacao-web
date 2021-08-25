@@ -1,13 +1,11 @@
 const { MongoClient } = require('mongodb');
 const { mongoURL, dbName } = require('../config');
 
-const client = new MongoClient();
+const client = new MongoClient(mongoURL);
 
 async function connectMongo() {
     try {
-        await client.connect(mongoURL,
-            { urlNewUrlParser: true }
-        );
+        await client.connect();
         console.info('Conexão com o banco realizada ...');
         return client.db(dbName);
     } catch (error) {
@@ -26,4 +24,8 @@ async function closeMongo(db) {
     }
 }
 
-module.exports = { connectMongo, closeMongo };
+
+module.exports = {
+    connectMongo,
+    closeMongo
+};
