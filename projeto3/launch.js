@@ -28,7 +28,9 @@ async function main() {
         await colors.insertMany(documents);
         console.info('documentos inseridos com sucesso ...');
     }
-    console.info('Encerrando processo.')
+    console.info('Fechando conexão com o banco ...');
+    await database.closeMongo(db);
+    console.info('Encerrando processo.');
     exit(0);
 }
 
