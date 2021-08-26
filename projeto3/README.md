@@ -30,3 +30,10 @@ $ npm start
 ## Informações importantes
 
 - Os nomes, hexadecimais e decimais das cores foram retirados de https://en.wikipedia.org/wiki/Web_colors .
+
+## Critérios de avaliação
+
+    [ ] - verificação de preenchimento de campos obrigatório
+    [x] - validação da unicidade e autenticidade de campos de email e login
+    [ ] - permissão de publicação apenas ao usuário administrador
+    [ ] - instalação de um serviço de hospedagem

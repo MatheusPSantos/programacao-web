@@ -20,7 +20,7 @@ class UserController {
                 let salt = genSaltSync();
                 let password = hashSync(body.password, salt);
                 console.log('criar usuario ...');
-                user = await this.UserModel.insertOne({ username, password });
+                user = await this.UserModel.insertOne({ username: username, password: password });
                 return response.json(user);
             } else {
                 return response.status(409).json({

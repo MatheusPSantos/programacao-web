@@ -1,7 +1,12 @@
 const express = require('express');
 const routes = express.Router();
+
+const LoginController = require('./controllers/LoginController');
 const UserController = require('./controllers/UserController');
 
+routes.post('/login', (request, response) => LoginController.login(request, response));
+
+routes.post('/logout', (request, response) => LoginController.logout(request, response));
 
 routes.get('/user',
     (request, response) => UserController.index(request, response)
