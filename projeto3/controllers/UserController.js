@@ -1,5 +1,6 @@
 const database = require('../database/index');
 const User = require('../models/User');
+const { genSaltSync, hashSync, compareSync } = require('bcryptjs');
 class UserController {
     constructor() {
         this.collectionName = 'users';
@@ -13,11 +14,14 @@ class UserController {
     async create(request, response) {
         try {
             const { body } = request;
-            let user = await this.UserModel.findOne({username: body.username});
+            const { username } = body;
+            let user = await this.UserModel.findOne({ username: username });
             if (!user) {
-                user = await this.UserModel.insertOne(body);
+                let salt = genSaltSync();
+                let password = hashSync(body.password, salt);
+                console.log('criar usuario ...');
+                user = await this.UserModel.insertOne({ username, password });
                 return response.json(user);
-                console.log('criar usuario')
             } else {
                 return response.status(409).json({
                     error: 'Já existe um usuário com esse username.'
