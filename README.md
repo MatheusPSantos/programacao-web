@@ -12,6 +12,8 @@ O projeto está hospedado no vercel, na seguinte url: <a href="https://programac
 <tr>
 <td>Matheus Pereira dos Santos</td>
 <td><a href="https://github.com/matheuspsantos">matheuspsantos</a></td>
+<td>Gustavo Kenji Komatsu</td>
+<td><a href="https://github.com/GustavoKenji">GustavoKenji</a></td>
 
 </tr>
 </table>
