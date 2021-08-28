@@ -19,8 +19,9 @@ class UserController {
             if (!user) {
                 let salt = genSaltSync();
                 let password = hashSync(body.password, salt);
+								let acl = body.acl ? "admin" : "";
                 console.log('criar usuario ...');
-                user = await this.UserModel.insertOne({ username: username, password: password });
+                user = await this.UserModel.insertOne({ username: username, password: password, acl });
                 return response.json(user);
             } else {
                 return response.status(409).json({
