@@ -35,5 +35,5 @@ $ npm start
 
     [x] - verificação de preenchimento de campos obrigatório
     [x] - validação da unicidade e autenticidade de campos de email e login
-    [ ] - permissão de publicação apenas ao usuário administrador
-    [ ] - instalação de um serviço de hospedagem
+    [x] - permissão de publicação apenas ao usuário administrador
+    [x] - instalação de um serviço de hospedagem

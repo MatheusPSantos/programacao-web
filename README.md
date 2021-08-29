@@ -31,6 +31,16 @@ O banco de dados utilizado pela aplicação do servidor é o banco mongodb. Para
 
 Para acessar o banco de dados na nuvem, utilizar a url: `mongodb+srv://admin:projeto3@cluster0.220ie.mongodb.net/myFirstDatabase?retryWrites=true&w=majority` através de um serviço como o https://www.mongodb.com/products/compass .
 
+## Usuários de teste
+
+|Usuário de teste com nível de admin|Usuário normal|
+|-----|----|
+|email: prog-web@mail.com|email: teste@teste.com|
+|senha: teste|senha: teste|
+
+
+
+
 ## Membros do projeto]
 |             Nome           |               Github              |
 |----------------------------|-----------------------------------|
