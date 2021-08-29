@@ -14,10 +14,6 @@ app.use(session({
 	saveUninitialized: true,
 	cookie: {secure: false},
 }));
-//  rotas
-app.get("/", ((req, res) => {
-	console.log("session ID >>>>>", req.sessionID);
-}));
 
 app.use(routes);
 
