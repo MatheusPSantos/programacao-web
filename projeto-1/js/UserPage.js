@@ -7,6 +7,9 @@ window.onload = async () => {
     let userLabel = document.querySelector("#username-display");
     let username = window.localStorage.getItem('username');
     userLabel.textContent = username;
+
+    let posts = await showPosts();
+    renderPosts(posts);
 }
 
 const colorSection = document.querySelector('#color-section');
