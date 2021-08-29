@@ -23,3 +23,17 @@ function renderPosts(posts) {
         `;
     });
 }
+
+function createPost(req) {
+    return fetch(`${API_URL}/posts`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(req)
+    }).then(res => {
+        if (res.status === 200) {
+            return res.json();
+        } else {
+            return { acknowledged: false }
+        }
+    })
+}

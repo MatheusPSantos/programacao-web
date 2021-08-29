@@ -1,3 +1,4 @@
+let userLevel = "";
 window.onload = async () => {
     if (!getSession() || getSession() === "") {
         window.alert('Usuário deslogado');
@@ -8,22 +9,30 @@ window.onload = async () => {
     let username = window.localStorage.getItem('username');
     userLabel.textContent = username;
 
+    userLevel = getUserACL();
+    console.log(userLevel)
+
     let posts = await showPosts();
     renderPosts(posts);
 }
-
+// Seções do painel
 const colorSection = document.querySelector('#color-section');
 const postSection = document.querySelector('#post');
 const lasposSection = document.querySelector('#last-posts');
 const userSection = document.querySelector('#user-section');
 
+// Botões do painel
 const colorBtn = document.querySelector('#colorBtn');
 const postBtn = document.querySelector('#postBtn');
 const logoutBtn = document.querySelector('#logoutBtn');
+
+// botoes de formulario
 const createUserBtn = document.querySelector('#createUserBtn');
 const showUserBtn = document.querySelector('#showUserBtn');
-
+const postZoneBtnForm = document.querySelector('#postZoneBtn');
+//formularios
 const createUserForm = document.querySelector('#createUserForm');
+const postForm = document.querySelector('#post-form');
 
 colorBtn.addEventListener('click', (event) => {
     event.preventDefault();
@@ -38,6 +47,10 @@ colorBtn.addEventListener('click', (event) => {
 });
 
 postBtn.addEventListener('click', (event) => {
+    if(!userLevel.includes('admin')) {
+        window.alert("Precisa ser um usuário administrador.")
+        return;
+    }
     event.preventDefault();
     let atts = postSection.getAttribute('style');
     if (atts.includes('none')) {
@@ -91,6 +104,10 @@ createUserBtn.addEventListener('click', async (event) => {
     let email = inputs[0].value;
     let pass = inputs[1].value;
     let acl = inputs[2].checked ? "admin" : "";
+    if(!userLevel.includes("admin")) {
+        window.alert("Funcionalidade disponível somente para usuário administrador.");
+        return;
+    }
     if (email !== "" && pass !== "") {
         const data = {
             username: email, password: pass, acl
@@ -99,16 +116,41 @@ createUserBtn.addEventListener('click', async (event) => {
         if (res.status === 200) {
             window.alert('Usuário criado com sucesso.');
             window.location.reload();
-        }
-        if (res.status === 409) {
+            return;
+        } else if (res.status === 409) {
             window.alert('Um usuário já existe com esse email.');
+            return;
         }
         else {
             window.alert('Erro ao criar o usuário.');
-            window.reload();
+            window.location.reload();
+            return;
         }
-        return;
     } else {
         window.alert("Insira um email ou senha para criar o usuário.")
+    }
+});
+
+postZoneBtnForm.addEventListener('click', async(event) => {
+    event.preventDefault();
+    let inputs = postForm.elements;
+    let title = inputs[0].value;
+    let text = inputs[1].value;
+    const data = {title,text};
+    if(!userLevel.includes("admin")) {
+        window.alert("Somente administradores podem postar.");
+        return;
+    }
+    if(title !== "" && text !== "") {
+        const res = await createPost(data);
+        if(res.acknowledged) {
+            window.alert("Post criado com sucesso.");
+            window.location.reload();
+            return;
+        }
+    } else {
+        window.alert("Você precisa informar um título e o conteúdo.");
+        window.location.reload();
+        return;
     }
 });
