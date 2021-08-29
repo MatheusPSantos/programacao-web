@@ -19,11 +19,15 @@ routes.post('/user',
 );
 
 routes.post('/posts',
-    async (request, response) => await PostsController.createPost(request, response)
+async (request, response) => await PostsController.createPost(request, response)
 );
 
 routes.post('/delete',
-    (request, response) => PostsController.deletePost(request, response)
+(request, response) => PostsController.deletePost(request, response)
+);
+
+routes.post('/colors',
+    (request, response) => ColorController.searchColors(request, response)
 );
 
 module.exports = routes;

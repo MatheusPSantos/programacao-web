@@ -2,7 +2,7 @@ const database = require('../database/index');
 
 class Color{
 	constructor() {
-		this.collection = 'color';
+		this.collection = 'colors';
 	}
 
 	async connect() {
@@ -10,6 +10,14 @@ class Color{
 		return db.collection(this.collection);
 	}
 
-	// sort no array pra pegar o minRange e o maxRange
-	// mais um sort dentro do array do range
+	async getAllColors() {
+		try {
+			const colors = await this.connect();
+			return await colors.find({}).toArray();
+		} catch (error) {
+			throw new Error(error);
+		}
+	}
 }
+
+module.exports = Color;
