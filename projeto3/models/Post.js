@@ -31,6 +31,7 @@ class Post{
 	async deletePost(req) {
 		try {
 			const post = await this.connect();
+			console.log(req)
 			return await post.deleteOne(req);
 		} catch (error) {
 			throw new Error(error);

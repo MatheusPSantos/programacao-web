@@ -24,7 +24,7 @@ routes.post('/posts',
 
 routes.get('/posts', async (request, response) => await PostsController.index(request, response));
 
-routes.post('/delete',
+routes.delete('/posts',
     (request, response) => PostsController.deletePost(request, response)
 );
 

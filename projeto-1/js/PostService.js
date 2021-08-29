@@ -19,6 +19,12 @@ function renderPosts(posts) {
             <div>
                 <h3>${p.title}</h3>
                 <p>${p.text}</p>
+                <button 
+                    id=${p._id}
+                    class="delete-post-btn" onClick="deletePost(this.id)"
+                >
+                <i class="fa fa-trash-o" aria-hidden="true"></i> Deletar
+                </button>
             </div>
         `;
     });
@@ -36,4 +42,21 @@ function createPost(req) {
             return { acknowledged: false }
         }
     })
+}
+
+
+function deletePost(id) {
+    return fetch(`${API_URL}/posts?id=${id}`, {
+        method: "DELETE",
+        headers: {"Content-Type": "application/json"}
+    }).then(res => {
+        if(res.status===200){
+            window.location.reload();
+            return res.json();
+        } else {
+            window.alert('Erro ao deletar o post.')
+            window.location.reload();
+            return;
+        }
+    });
 }

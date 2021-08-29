@@ -222,3 +222,18 @@ nav button:hover {
     padding: 10px;
     box-shadow: 1px 2px 4px rgba(0,0,0,.3);
 }
+
+.delete-post-btn {
+    background: red;
+    width: auto;
+    height: 30px;
+    color: white;
+    padding: 5px;
+    margin: 5px auto;
+    border:none;
+    cursor: pointer;
+}
+
+.delete-post-btn:hover {
+    opacity: 0.7;
+}
