@@ -10,8 +10,6 @@ window.onload = async () => {
     userLabel.textContent = username;
 
     userLevel = getUserACL();
-    console.log(userLevel)
-
     let posts = await showPosts();
     renderPosts(posts);
 }
