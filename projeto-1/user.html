@@ -18,11 +18,32 @@
         </div>
         <span id="username-display"></span>
         <button id="colorBtn">Api de cores</button>
+        <button id="showUserBtn">Criar usuário</button>
         <button id="postBtn">Fazer um novo post</button>
         <button id="logoutBtn">Logout</button>
     </nav>
 
     <div id="content">
+        
+        <section id="user-section" style="display: none;">
+            <h2>Criar usuário</h2>
+            <form id="createUserForm">
+                <label for="user">Email:</label>
+                <input type="email" name="user" placeholder="email@exemplo.com"/>
+                <label for="pass">Senha:</label>
+                <input type="password" name="pass" placeholder="senha">
+                <div id="user-role">
+                    <label for="role">O usuário é administrador:</label>
+                    <input type="checkbox" name="role" value="admin"/>
+                </div>
+            </form>
+            <button id="createUserBtn">Criar</button>
+            <h2>usuários cadastrados:</h2>
+            <div id="list-users">
+
+            </div>
+        </section>
+
         <section id="color-section" style="display: none;">
             <h2>Colour lover - api</h2>
             <div class="color-actions">
@@ -68,6 +89,7 @@
 <script src="js/configs.js"></script>
 <script src="js/LoginService.js"></script>
 <script src="js/SessionService.js"></script>
+<script src="js/UserSession.js"></script>
 <script src="js/UserPage.js"></script>
 
 </html>

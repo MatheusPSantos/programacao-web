@@ -9,7 +9,7 @@ routes.post('/login', (request, response) => LoginController.login(request, resp
 routes.post('/logout', (request, response) => LoginController.logout(request, response));
 
 routes.get('/user',
-    (request, response) => UserController.index(request, response)
+    async (request, response) => await UserController.index(request, response)
 );
 routes.post('/user',
     (request, response) => UserController.create(request, response)

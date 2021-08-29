@@ -10,6 +10,15 @@ class User {
         return db.collection(this.collection);
     }
 
+    async find() {
+        try {
+            const users = await this.connect();
+            return await users.find().sort({username: 1}).toArray();
+        } catch (error) {
+            throw new Error(error);
+        }
+    }
+
     async findOne(req) {
         try {
             const users = await this.connect();

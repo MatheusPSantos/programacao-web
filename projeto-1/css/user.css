@@ -168,3 +168,57 @@ nav button:hover {
     display: flex;
     flex-direction: column;
 }
+
+#user-section {
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+}
+#user-section h2 {
+    text-align: center;
+}
+#user-section form {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+#user-section form input {
+    height: 40px;
+}
+#user-section  button {
+    background: green;
+    color: white;
+    border: none;
+    position: relative;
+    height: 40px;
+    width: 40%;
+    cursor: pointer;
+    margin: 10px 30%;
+}
+#user-section  button:hover {
+    opacity: 0.7;
+}
+#user-role {
+    display: flex;
+    flex-direction: row;
+}
+#user-role label {
+    margin: 10px 0 0 0;
+}
+#list-users {
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+
+#list-users div {
+    margin: 5px;
+    height: 40px;
+    border: none;
+    padding: 10px;
+    box-shadow: 1px 2px 4px rgba(0,0,0,.3);
+}
