@@ -1,8 +1,8 @@
 function saveSession(data) {
     const { sessionID, user } = data;
-    document.cookie = `session=${sessionID}`;
+    document.cookie = `session=${sessionID};`;
+    document.cookie = `user_acl=${user.acl}`;
     document.cookie = `username=${user.username}`;
-    document.cookit = `user_acl=${user.acl}`;
 }
 
 function getSession() {
