@@ -22,6 +22,8 @@ routes.post('/posts',
     async (request, response) => await PostsController.createPost(request, response)
 );
 
+routes.get('/posts', async (request, response) => await PostsController.index(request, response));
+
 routes.post('/delete',
     (request, response) => PostsController.deletePost(request, response)
 );
