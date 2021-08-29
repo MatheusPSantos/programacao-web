@@ -1,1 +1,0 @@
-web=node projeto3/index.js
