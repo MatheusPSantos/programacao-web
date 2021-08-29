@@ -28,4 +28,6 @@ routes.delete('/posts',
     (request, response) => PostsController.deletePost(request, response)
 );
 
+routes.get('/colors', async (request, response) => await ColorController.searchColors(request, response));
+
 module.exports = routes;

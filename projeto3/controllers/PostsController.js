@@ -11,7 +11,7 @@ class PostsController {
 		try {
 			const { body } = request;
 			const { title, text } = body;
-			console.log('criando um post ...');
+			console.info('criando um post ...');
 			let post = await this.PostsModel.createPost({ title: title, text: text });
 			return response.status(200).json(post);
 		} catch (error) {
