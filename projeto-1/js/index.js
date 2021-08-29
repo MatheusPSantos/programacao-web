@@ -17,8 +17,11 @@ let resPallete = [];
 const colourAPI = "https://colourlovers.com/api/palettes/new?format=json";
 const loginAPI = "https://reqres.in/api/login";
 
-document.cookie = 'access_token=';
-window.onload = displayColorDisplay();
+window.onload = () => {
+    if (getSession() && getSession() !== "") {
+        window.location = "user.html";
+    }
+}
 
 buttonCloseLogin.addEventListener('click', () => {
     loginBox.setAttribute("style", "display:none");
@@ -45,7 +48,7 @@ loginEmail.addEventListener('change', (event) => {
     }
 });
 
-loginForm.addEventListener('submit', (event) => {
+loginForm.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     let valEmail = loginEmail.value;
@@ -60,39 +63,21 @@ loginForm.addEventListener('submit', (event) => {
         return;
     }
 
-    requestLogin(valEmail, valPass);
+    const login = await requestLogin(valEmail, valPass);
+    if (!login.error) {
+        saveSession(login);
+        saveUserNameLocalstorage(login);
+        closeLoginBox();
+        changePage();
+        return;
+    }
+    displayRequestError(login.error);
+    return;
 });
 
-function requestLogin(user, pass) {
-    try {
-        let token = "";
-        let requestBody = {
-            email: user.trim(),
-            password: pass.trim()
-        };
-
-        fetch(loginAPI, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(requestBody)
-        }).then(response => {
-            if (response.status === 200) {
-                return response.json();
-            } else {
-                displayRequestError(response.statusText);
-            }
-        }).then(data => {
-            document.cookie = `access_token=${data.token}`;
-            displayColorDisplay();
-            closeLoginBox();
-        }).catch(err => {
-            console.error(err);
-        });
-    } catch (error) {
-        console.error('erro', error);
-    }
+function saveUserNameLocalstorage(data) {
+    const{user} = data;
+    window.localStorage.setItem('username', user.username);
 }
 
 function displayRequestError(errormsg) {
@@ -105,21 +90,13 @@ function closeLoginBox() {
     loginBox.setAttribute("style", "display:none");
 }
 
-function recoverToken() {
-    let cookies = document.cookie.split(';');
-    let token = cookies.filter((t) => t.includes("access_token"));
-    return token[0].split("=")[1];
-}
-
-function displayColorDisplay() {
-    let acces_token = recoverToken()
-    if (acces_token !== "") {
-        colorSection.setAttribute("style", "display:inherit");
-        window.scrollTo(0, 6700)
-
-    } else {
-        colorSection.setAttribute("style", "display:none");
+function changePage() {
+    let sessionTk = getSession();
+    if (sessionTk || sessionTk !== "") {
+        window.location = "user.html"
+        return;
     }
+    return;
 }
 
 function transformNameInAsciiCode(nameArray) {
