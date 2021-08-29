@@ -1,6 +1,0 @@
-{
-    "name": "programacao-web",
-    "scripts": {
-        "start": "node projeto3/index.js"
-    }
-}
