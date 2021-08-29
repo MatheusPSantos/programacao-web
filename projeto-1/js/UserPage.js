@@ -28,6 +28,12 @@ const logoutBtn = document.querySelector('#logoutBtn');
 const createUserBtn = document.querySelector('#createUserBtn');
 const showUserBtn = document.querySelector('#showUserBtn');
 const postZoneBtnForm = document.querySelector('#postZoneBtn');
+const submitButtonColor = document.querySelector("#submit-name-color");
+const inputNameColor = document.querySelector("#input-name-color");
+const inputNameError = document.querySelector("#input-name-error");
+const resultsPallete = document.querySelector("#results");
+let resPallete = [];
+
 //formularios
 const createUserForm = document.querySelector('#createUserForm');
 const postForm = document.querySelector('#post-form');
@@ -84,11 +90,13 @@ showUserBtn.addEventListener('click', async (event) => {
 });
 
 
-logoutBtn.addEventListener('click', (event) => {
+logoutBtn.addEventListener('click', async (event) => {
     event.preventDefault();
+		let sessionID = getSession();
     document.cookie = 'session=; Max-Age=-99999999;';
     document.cookie = 'username=; Max-Age=-99999999;';
     document.cookie = 'user_acl=; Max-Age=-99999999;';
+		await logoutUser(sessionID);
     window.location.reload();
 });
 
@@ -151,4 +159,24 @@ postZoneBtnForm.addEventListener('click', async(event) => {
         window.location.reload();
         return;
     }
+});
+
+submitButtonColor.addEventListener('click', (event) => {
+	event.preventDefault();
+	if (inputNameColor.value.length > 3) {
+			let rangeValues = calculateRangeValues(transformNameInAsciiCode(inputNameColor.value));
+
+			requestColoursPallete(rangeValues).then(pallete => {
+					template(pallete);
+			});
+	} else {
+			inputNameError.innerText = "Informe mais de três caracteres"
+	}
+});
+
+inputNameColor.addEventListener('change', (event) => {
+	event.preventDefault();
+	if (inputNameColor.value.length > 3) {
+			inputNameError.innerText = "";
+	}
 });
