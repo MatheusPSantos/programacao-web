@@ -43,9 +43,9 @@ function requestColoursPallete(values) {
 function template(values) {
 	let item = `   
 					<div class="pallete-result">
-							${values.map(v => `<div class="pallete-square" style="background:${v.hexadecimal};">
+							${values.map(v => v ? `<div class="pallete-square" style="background:${v.hexadecimal};">
 								<span style="color: white; background: black">${v.name}</span>
-							</div>`).join("")}
+							</div>`: '').join("")}
 					</div>
 			`;
 
