@@ -29,7 +29,7 @@ async function main() {
         console.info('documentos inseridos com sucesso ...');
     }
     console.info('Fechando conexão com o banco ...');
-    await database.closeMongo(db);
+    //await database.closeMongo(db);
     console.info('Encerrando processo.');
     exit(0);
 }

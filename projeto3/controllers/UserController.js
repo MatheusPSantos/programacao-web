@@ -7,8 +7,13 @@ class UserController {
         this.UserModel = new User();
     }
 
-    async index() {
-        console.log('index')
+    async index(request, response) {
+        try {
+            let users = await this.UserModel.find();
+            return response.status(200).json(users);
+        } catch (error) {
+            throw new Error(error);
+        }
     }
 
     async create(request, response) {
@@ -19,8 +24,9 @@ class UserController {
             if (!user) {
                 let salt = genSaltSync();
                 let password = hashSync(body.password, salt);
+								let acl = body.acl ? "admin" : "";
                 console.log('criar usuario ...');
-                user = await this.UserModel.insertOne({ username: username, password: password });
+                user = await this.UserModel.insertOne({ username: username, password: password, acl });
                 return response.json(user);
             } else {
                 return response.status(409).json({
