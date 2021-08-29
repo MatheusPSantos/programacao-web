@@ -7,8 +7,13 @@ class UserController {
         this.UserModel = new User();
     }
 
-    async index() {
-        console.log('index')
+    async index(request, response) {
+        try {
+            let users = await this.UserModel.find();
+            return response.status(200).json(users);
+        } catch (error) {
+            throw new Error(error);
+        }
     }
 
     async create(request, response) {

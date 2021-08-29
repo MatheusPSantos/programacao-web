@@ -11,7 +11,7 @@ routes.post('/login', (request, response) => LoginController.login(request, resp
 routes.post('/logout', (request, response) => LoginController.logout(request, response));
 
 routes.get('/user',
-    (request, response) => UserController.index(request, response)
+    async (request, response) => await UserController.index(request, response)
 );
 
 routes.post('/user',
@@ -22,12 +22,10 @@ routes.post('/posts',
 async (request, response) => await PostsController.createPost(request, response)
 );
 
-routes.post('/delete',
-(request, response) => PostsController.deletePost(request, response)
-);
+routes.get('/posts', async (request, response) => await PostsController.index(request, response));
 
-routes.post('/colors',
-    (request, response) => ColorController.searchColors(request, response)
+routes.delete('/posts',
+    (request, response) => PostsController.deletePost(request, response)
 );
 
 module.exports = routes;
