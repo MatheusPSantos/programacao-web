@@ -19,6 +19,7 @@ function renderPosts(posts) {
             <div>
                 <h3>${p.title}</h3>
                 <p>${p.text}</p>
+								<image src="${API_URL}/public/Uploads/${p.imageUrl}" />
                 <button 
                     id=${p._id}
                     class="delete-post-btn" onClick="deletePost(this.id)"
@@ -42,6 +43,22 @@ function createPost(req) {
             return { acknowledged: false }
         }
     })
+}
+
+function uploadImage(req) {
+	const formData = new FormData();
+	formData.append("upload-image", req);
+	return fetch(`${API_URL}/upload-image`, {
+			method: "POST",
+			enctype: 'multipart/form-data',
+			body: formData
+	}).then(res => {
+			if (res.status === 200) {
+					return res.json();
+			} else {
+					return { acknowledged: false }
+			}
+	})
 }
 
 
