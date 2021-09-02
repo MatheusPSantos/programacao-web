@@ -144,7 +144,6 @@ postZoneBtnForm.addEventListener('click', async(event) => {
     let text = inputs[1].value;
 		let image = inputs[2].files[0];
 		let imageUrl = image.name;
-		console.log("teste da imagem >>>> ", image);
     const data = { title, text, imageUrl };
     if(!userLevel.includes("admin")) {
         window.alert("Somente administradores podem postar.");
@@ -153,7 +152,7 @@ postZoneBtnForm.addEventListener('click', async(event) => {
     if(title !== "" && text !== "" && image !== "" && imageUrl !== "") {
         const res = await createPost(data);
 				const res2 = await uploadImage(image);
-        if(res.acknowledged && res2.acknowledged) {
+        if(res.acknowledged || res2.acknowledged) {
             window.alert("Post criado com sucesso.");
             window.location.reload();
             return;
