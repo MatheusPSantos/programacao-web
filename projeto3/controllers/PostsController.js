@@ -10,9 +10,9 @@ class PostsController {
 	async createPost(request, response) {
 		try {
 			const { body } = request;
-			const { title, text } = body;
+			const { title, text, imageUrl } = body;
 			console.info('criando um post ...');
-			let post = await this.PostsModel.createPost({ title: title, text: text });
+			let post = await this.PostsModel.createPost({ title: title, text: text, imageUrl: imageUrl });
 			return response.status(200).json(post);
 		} catch (error) {
 			new Error(error);
