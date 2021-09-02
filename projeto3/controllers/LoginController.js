@@ -13,15 +13,20 @@ class LoginController {
       const { body, sessionID } = request;
       let user = await this.UserModel.findOne({ username: body.username });
       if (user) {
-        if (compareSync(body.password, user.password)) {
-          let session = await this.SessionModel.createSession({
-            username: body.username,
-            session: sessionID,
-          });
-          return response.status(200).json({ user, sessionID });
-        } else {
-          return response.status(401).json({ error: "Não autorizado" });
-        }
+				let verifySession = await this.SessionModel.consultSession({ username: body.username });
+				if(verifySession === null || verifySession === undefined) {
+					if (compareSync(body.password, user.password)) {
+						let session = await this.SessionModel.createSession({
+							username: body.username,
+							session: sessionID,
+						});
+						return response.status(200).json({ user, sessionID });
+					} else {
+						return response.status(401).json({ error: "Não autorizado" });
+					}
+				} else {
+					return response.status(409).json({ error: "Usuário já está logado na plataforma" });
+				}
       } else {
         return response.status(400).json({ error: "Usuário não existe" });
       }

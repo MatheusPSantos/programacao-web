@@ -10,6 +10,15 @@ class Session {
 		return db.collection(this.collection);
 	}
 
+	async consultSession(req) {
+		try {
+			const session = await this.connect();
+			return await session.findOne(req);
+		} catch (error) {
+			
+		}
+	}
+
 	async createSession(req) {
 		try {
 			const session = await this.connect();

@@ -62,12 +62,13 @@
 
         <section id="post" style="display: none;">
             <h2>Faça um post</h2>
-            <div class="post-zone">
+            <div class="post-zone" enctype="multipart/form-data">
                 <form id="post-form">
                     <label for="title">Título do post:</label>
                     <input name="title" type="text" placeholder="Título" />
                     <label for="text">Texto da postagem:</label>
                     <textarea type="text" name="text" placeholder="Texto ..."></textarea>
+										<input type="file" id="upload-image" name="upload-image"/>
                 </form>
                 <button id="postZoneBtn">Postar</button>
             </div>

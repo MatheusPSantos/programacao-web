@@ -5,6 +5,7 @@ const LoginController = require('./controllers/LoginController');
 const UserController = require('./controllers/UserController');
 const ColorController = require('./controllers/ColorController');
 const PostsController = require('./controllers/PostsController');
+const UploadMiddleware = require('./middlewares/UploadMiddleware');
 
 routes.post('/login', (request, response) => LoginController.login(request, response));
 
@@ -29,5 +30,21 @@ routes.delete('/posts',
 );
 
 routes.get('/colors', async (request, response) => await ColorController.searchColors(request, response));
+
+routes.post('/upload-image', UploadMiddleware.single('upload-image'), async (request, response) => {
+
+	if (request.file) {
+		return response.status(200).json({
+			erro: false,
+			mensagem: "Upload da imagem realizado com sucesso!"
+		});
+	}
+
+	return response.status(400).json({
+		erro: true,
+		mensagem: "Erro ao realizar o upload da imagem!"
+	});
+
+})
 
 module.exports = routes;
